@@ -1,0 +1,28 @@
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter)
+
+const Home = () => import("@/views/home/Home")
+const Category = () => import("@/views/category/Category")
+const Cart = () => import("@/views/cart/Cart")
+const Profile = () => import("@/views/profile/Profile")
+const Details = () => import("@/views/details/Details")
+
+
+
+const routes = [
+  { path: '', component: Home },
+  { path: '/home', component: Home },
+  { path: '/category', component: Category },
+  { path: '/cart', component: Cart },
+  { path: '/profile', component: Profile },
+  { path: '/detail/:iid', component: Details }
+]
+
+const router = new VueRouter({
+  mode: 'history',
+  routes
+})
+
+export default router
